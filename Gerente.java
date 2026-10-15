@@ -1,19 +1,45 @@
 import java.util.ArrayList;
 
-public class Gerente {
+public class Gerente extends Funcionario {
 
-    private String java;
+    private String senha;
     private ArrayList<Funcionario> equipe = new ArrayList<>();
 
-    public void listarDados() {}
+    public void listarDados() {
+        System.out.println("\n--- Dados do gerente ---");
+        this.listarAtributos();
+    }
 
-    public boolean validarAcesso(String senha) {}
+    public boolean validarAcesso(String senha) {
+        return senha == this.senha;
+    }
 
-    public void alterarSenha(String atual, String nova) {}
+    public void alterarSenha(String atual, String nova) {
+        if (validarAcesso(atual)) {
+            this.senha = nova;
+        }
+    }
 
-    public double custoEquipe() {}
+    public double custoEquipe() {
+        double custo = this.salario;
 
-    public void listarEquipe() {}
+        for (Funcionario funcionario : this.equipe) {
+            custo += funcionario.salario;
+        }
 
-    public void inserirFuncEquipe(Funcionario funcionario) {}
+        return custo;
+    }
+
+    public void listarEquipe() {
+        System.out.println("\n--- Membros da equipe ---");
+        System.out.println("Gerente: " + this.nome);
+        
+        for (Funcionario funcionario : this.equipe) {
+            System.out.println(funcionario.nome);
+        }
+    }
+
+    public void inserirFuncEquipe(Funcionario funcionario) {
+        this.equipe.add(funcionario);
+    }
 }
