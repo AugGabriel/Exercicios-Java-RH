@@ -1,7 +1,8 @@
 public class Funcionario {
 
-    protected String nome, cpf, dataNascimento, dataContratacao;
+    protected String nome, cpf;
     protected double salario;
+    protected Data dataNascimento, dataContratacao;
 
     protected void listarAtributos() {
         System.out.println("Nome: " + this.nome);

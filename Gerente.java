@@ -12,7 +12,7 @@ public class Gerente extends Funcionario {
     }
 
     public boolean validarAcesso(String senha) {
-        return senha == this.senha;
+        return senha.equals(this.senha);
     }
 
     public void alterarSenha(String atual, String nova) {

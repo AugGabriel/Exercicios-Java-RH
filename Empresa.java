@@ -21,17 +21,65 @@ public class Empresa {
         System.out.println("Custo mensal da empresa: " + custoMensal);
     }
 
-    public void inserirFuncionario() {}
+    public void inserirFuncionario() {
+        this.funcionarios.add(new Funcionario());
+    }
 
-    public void inserirGerente() {}
+    public void inserirGerente() {
+        this.gerentes.add(new Gerente());
+    }
 
-    public Funcionario funcionarioMaisAntigo() {}
+    public Funcionario funcionarioMaisAntigo() {
+        if (this.funcionarios.size() == 0) {
+            return null;
+        }
 
-    public Funcionario funcionarioMaisVelho() {}
+        Funcionario maisAntigo = this.funcionarios.get(0);
 
-    public Funcionario localizarFuncionario(String cpf) {}
+        for (Funcionario funcionario : this.funcionarios) {
+            if (funcionario.dataContratacao.compara(maisAntigo.dataContratacao) == -1) {
+                maisAntigo = funcionario;
+            }
+        }
 
-    public Gerente localizarGerente(String cpf) {}
+        return maisAntigo;
+    }
 
-    public void atribuirFuncionarioGerente(Gerente gerente, Funcionario funcionario) {}
+    public Funcionario funcionarioMaisVelho() {
+        if (this.funcionarios.size() == 0) {
+            return null;
+        }
+
+        Funcionario maisVelho = this.funcionarios.get(0);
+
+        for (Funcionario funcionario : this.funcionarios) {
+            if (funcionario.dataNascimento.compara(maisVelho.dataNascimento) == -1) {
+                maisVelho = funcionario;
+            }
+        }
+
+        return maisVelho;
+    }
+
+    public Funcionario localizarFuncionario(String cpf) {
+        for (Funcionario funcionario : this.funcionarios) {
+            if (funcionario.cpf.equals(cpf)) {
+                return funcionario;
+            }
+        }
+        return null;
+    }
+    
+    public Gerente localizarGerente(String cpf) {
+        for (Gerente gerente : this.gerentes) {
+            if (gerente.cpf.equals(cpf)) {
+                return gerente;
+            }
+        }
+        return null;
+    }
+
+    public void atribuirFuncionarioGerente(Gerente gerente, Funcionario funcionario) {
+        gerente.inserirFuncEquipe(funcionario);
+    }
 }
