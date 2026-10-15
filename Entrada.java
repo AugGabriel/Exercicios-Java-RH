@@ -2,27 +2,33 @@ import java.util.Scanner;
 
 public class Entrada {
 
-    public String lerLinha(String msg, Scanner leitor) {}
+    public static String lerLinha(String msg, Scanner leitor) {
+        return leitor.nextLine();
+    }
 
-    public int lerInteiro(String msg, Scanner leitor) {}
+    public static int lerInteiro(String msg, Scanner leitor) {
+        return leitor.nextInt();
+    }
 
-    public double lerDouble(String msg, Scanner leitor) {}
+    public static double lerDouble(String msg, Scanner leitor) {
+        return leitor.nextDouble();
+    }
 
-    public int menu(Scanner leitor) {}
+    public static int menu(Scanner leitor) {}
 
-    public void contratarFuncionario(Empresa empresa, Scanner leitor) {}
+    public static void contratarFuncionario(Empresa empresa, Scanner leitor) {}
 
-    public void contratarGerente(Empresa empresa, Scanner leitor) {}
+    public static void contratarGerente(Empresa empresa, Scanner leitor) {}
 
-    public Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {}
+    public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {}
 
-    public Gerente selecionarGerente(Empresa empresa, Scanner leitor) {}
+    public static Gerente selecionarGerente(Empresa empresa, Scanner leitor) {}
 
-    public void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {}
+    public static void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {}
 
-    public void alterarSenhaGerente(Empresa empresa, Scanner leitor) {}
+    public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {}
 
-    public void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {}
+    public static void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {}
 
-    public void funcionarioMaisVelho(Empresa empresa, Scanner leitor) {}
+    public static void funcionarioMaisVelho(Empresa empresa, Scanner leitor) {}
 }

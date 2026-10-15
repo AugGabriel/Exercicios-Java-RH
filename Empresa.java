@@ -21,12 +21,12 @@ public class Empresa {
         System.out.println("Custo mensal da empresa: " + custoMensal);
     }
 
-    public void inserirFuncionario() {
-        this.funcionarios.add(new Funcionario());
+    public void inserirFuncionario(Funcionario funcionario) {
+        this.funcionarios.add(funcionario);
     }
 
-    public void inserirGerente() {
-        this.gerentes.add(new Gerente());
+    public void inserirGerente(Gerente gerente) {
+        this.gerentes.add(gerente);
     }
 
     public Funcionario funcionarioMaisAntigo() {
