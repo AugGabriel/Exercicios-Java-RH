@@ -8,6 +8,7 @@ public class Gerente extends Funcionario {
     public void listarDados() {
         System.out.println("\n--- Dados do gerente ---");
         this.listarAtributos();
+        System.out.println("Custo da equipe: " + this.custoEquipe());
     }
 
     public boolean validarAcesso(String senha) {
