@@ -5,6 +5,18 @@ public class Gerente extends Funcionario {
     private String senha;
     private ArrayList<Funcionario> equipe = new ArrayList<>();
 
+    public Gerente(
+        String nome, 
+        String cpf, 
+        double salario, 
+        Data dataNascimento, 
+        Data dataContratacao,
+        String senha
+    ) {
+        super(nome, cpf, salario, dataNascimento, dataContratacao);
+        this.senha = senha;
+    }
+
     public void listarDados() {
         System.out.println("\n--- Dados do gerente ---");
         this.listarAtributos();

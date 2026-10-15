@@ -4,6 +4,20 @@ public class Funcionario {
     protected double salario;
     protected Data dataNascimento, dataContratacao;
 
+    public Funcionario(
+        String nome, 
+        String cpf, 
+        double salario, 
+        Data dataNascimento, 
+        Data dataContratacao
+    ) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+        this.dataNascimento = dataNascimento;
+        this.dataContratacao = dataContratacao;
+    }
+
     protected void listarAtributos() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Cpf: " + this.cpf);
