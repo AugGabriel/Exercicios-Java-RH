@@ -18,6 +18,8 @@ public class Funcionario {
         this.dataContratacao = dataContratacao;
     }
 
+    public String getNome() { return this.nome; }
+
     protected void listarAtributos() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Cpf: " + this.cpf);
