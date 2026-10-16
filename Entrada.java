@@ -54,7 +54,7 @@ public class Entrada {
             new Funcionario(nome, cpf, salario, dataNascimento, dataContratacao)
         );
 
-        System.out.println("Funcionário contratado com sucesso!");
+        System.out.println("\nFuncionário contratado com sucesso!");
     }
 
     public static void contratarGerente(Empresa empresa, Scanner leitor) {
@@ -74,7 +74,7 @@ public class Entrada {
             new Gerente(nome, cpf, salario, dataNascimento, dataContratacao, senha)
         );
 
-        System.out.println("Gerente contratado com sucesso!");
+        System.out.println("\nGerente contratado com sucesso!");
     }
 
     public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {
@@ -108,7 +108,7 @@ public class Entrada {
 
         gerente.inserirFuncEquipe(funcionario);
 
-        System.out.println("Funcionário atribuído com sucesso!");
+        System.out.println("\nFuncionário atribuído com sucesso!");
     }
 
     public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {
@@ -119,10 +119,10 @@ public class Entrada {
         String nova = Entrada.lerLinha("Digite a nova senha: ", leitor);
 
         if (gerente.alterarSenha(atual, nova)) {
-            System.out.println("Senha alterada com sucesso!");
+            System.out.println("\nSenha alterada com sucesso!");
         }
         else {
-            System.out.println("Não foi possível alterar a senha!");
+            System.out.println("\nNão foi possível alterar a senha!");
         }
     }
 
@@ -130,7 +130,7 @@ public class Entrada {
         Funcionario funcionario = empresa.funcionarioMaisAntigo();
 
         if (funcionario == null) {
-            System.out.println("Nenhum funcionário cadastrado!");
+            System.out.println("\nNenhum funcionário cadastrado!");
             return;
         }
 
@@ -141,7 +141,7 @@ public class Entrada {
         Funcionario funcionario = empresa.funcionarioMaisVelho();
 
         if (funcionario == null) {
-            System.out.println("Nenhum funcionário cadastrado!");
+            System.out.println("\nNenhum funcionário cadastrado!");
             return;
         }
 

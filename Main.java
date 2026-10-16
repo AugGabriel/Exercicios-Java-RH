@@ -37,7 +37,7 @@ public class Main {
             }
         } while (!escolha.equals("0"));
 
-        System.out.println("Até mais!");
+        System.out.println("\n\nAté mais!");
         leitor.close();
     }
 }

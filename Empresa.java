@@ -5,11 +5,19 @@ public class Empresa {
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
     private ArrayList<Gerente> gerentes = new ArrayList<>();
 
-    public Funcionario getFuncionario(int index) { 
+    public Funcionario getFuncionario(int index) {
+        if (index < 0 || index >= this.funcionarios.size()) {
+            System.out.println("Índex inválido!");
+            return null;
+        }
         return this.funcionarios.get(index); 
     }
-
-    public Gerente getGerente(int index) { 
+    
+    public Gerente getGerente(int index) {
+        if (index < 0 || index >= this.gerentes.size()) {
+            System.out.println("Índex inválido!");
+            return null;
+        }
         return this.gerentes.get(index); 
     }
 
