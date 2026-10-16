@@ -24,11 +24,11 @@ public class Funcionario {
         System.out.println("Nome: " + this.nome);
         System.out.println("Cpf: " + this.cpf);
         System.out.println("Salário: " + this.salario);
-        System.out.println();
     }
 
     public void listarDados() {
         System.out.println("\n--- Dados do funcionário ---");
         this.listarAtributos();
+        System.out.println();
     }
 }

@@ -21,6 +21,7 @@ public class Gerente extends Funcionario {
         System.out.println("\n--- Dados do gerente ---");
         this.listarAtributos();
         System.out.println("Custo da equipe: " + this.custoEquipe());
+        System.out.println();
     }
 
     public boolean validarAcesso(String senha) {
