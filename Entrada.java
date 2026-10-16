@@ -3,15 +3,26 @@ import java.util.Scanner;
 public class Entrada {
 
     public static String lerLinha(String msg, Scanner leitor) {
+        System.out.println(msg);
         return leitor.nextLine();
     }
-
+    
     public static int lerInteiro(String msg, Scanner leitor) {
-        return leitor.nextInt();
-    }
+        System.out.println(msg);
 
+        int entrada = leitor.nextInt();
+        leitor.nextLine();
+
+        return entrada;
+    }
+    
     public static double lerDouble(String msg, Scanner leitor) {
-        return leitor.nextDouble();
+        System.out.println(msg);
+
+        double entrada = leitor.nextDouble();
+        leitor.nextLine();
+
+        return entrada;
     }
 
     public static int menu(Empresa empresa, Scanner leitor) {

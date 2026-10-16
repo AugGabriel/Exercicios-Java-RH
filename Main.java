@@ -8,6 +8,7 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
 
         do {
+            System.out.println("");
             escolha = Entrada.menu(empresa, leitor);
 
             if (escolha == 1) {
