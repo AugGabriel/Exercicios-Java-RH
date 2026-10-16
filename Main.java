@@ -28,6 +28,9 @@ public class Main {
             else if (escolha == 6) {
                 Entrada.funcionarioMaisVelho(empresa, leitor);
             }
+            else if (escolha == 7) {
+                empresa.folhaPagamento();
+            }
             else if (escolha != 0) {
                 System.out.println("Opção inválida!");
             }

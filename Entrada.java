@@ -22,6 +22,7 @@ public class Entrada {
         System.out.println("4) Alterar senha de gerente");
         System.out.println("5) Imprimir dados do cliente com mais tempo de casa");
         System.out.println("6) Imprimir dados do cliente mais velho");
+        System.out.println("7) Imprimir folha de pagamento da empresa");
         System.out.println("0) Sair");
 
         return Entrada.lerInteiro("Sua escolha: ", leitor);
@@ -46,7 +47,7 @@ public class Entrada {
     }
 
     public static void contratarGerente(Empresa empresa, Scanner leitor) {
-         String nome = Entrada.lerLinha("Informe o nome: ", leitor);
+        String nome = Entrada.lerLinha("Informe o nome: ", leitor);
         String cpf = Entrada.lerLinha("Informe o cpf: ", leitor);
         double salario = Entrada.lerDouble("Informe o salário: ", leitor);
 
