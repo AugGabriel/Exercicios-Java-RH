@@ -14,7 +14,17 @@ public class Entrada {
         return leitor.nextDouble();
     }
 
-    public static int menu(Scanner leitor) {}
+        public static int menu(Empresa empresa, Scanner leitor) {
+        System.out.println("Opções:");
+        System.out.println("1) Contratar funcionário");
+        System.out.println("2) Contratar gerente");
+        System.out.println("3) Atribuir um funcionário a um gerente");
+        System.out.println("4) Alterar senha de gerente");
+        System.out.println("5) Imprimir dados do cliente com mais tempo de casa");
+        System.out.println("6) Imprimir dados do cliente mais velho");
+
+        return Entrada.lerInteiro("Sua escolha: ", leitor);
+    }
 
     public static void contratarFuncionario(Empresa empresa, Scanner leitor) {
         String nome = Entrada.lerLinha("Informe o nome: ", leitor);
