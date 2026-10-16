@@ -27,10 +27,12 @@ public class Gerente extends Funcionario {
         return senha.equals(this.senha);
     }
 
-    public void alterarSenha(String atual, String nova) {
+    public boolean alterarSenha(String atual, String nova) {
         if (validarAcesso(atual)) {
             this.senha = nova;
+            return true;
         }
+        return false;
     }
 
     public double custoEquipe() {

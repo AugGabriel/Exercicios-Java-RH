@@ -41,6 +41,8 @@ public class Entrada {
         empresa.inserirFuncionario(
             new Funcionario(nome, cpf, salario, dataNascimento, dataContratacao)
         );
+
+        System.out.println("Funcionário contratado com sucesso!");
     }
 
     public static void contratarGerente(Empresa empresa, Scanner leitor) {
@@ -59,6 +61,8 @@ public class Entrada {
         empresa.inserirGerente(
             new Gerente(nome, cpf, salario, dataNascimento, dataContratacao, senha)
         );
+
+        System.out.println("Gerente contratado com sucesso!");
     }
 
     public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {
@@ -80,6 +84,8 @@ public class Entrada {
         Gerente gerente = selecionarGerente(empresa, leitor);
 
         gerente.inserirFuncEquipe(funcionario);
+
+        System.out.println("Funcionário atribuído com sucesso!");
     }
 
     public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {
@@ -87,7 +93,13 @@ public class Entrada {
 
         String atual = Entrada.lerLinha("Digite a senha atual: ", leitor);
         String nova = Entrada.lerLinha("Digite a nova senha: ", leitor);
-        gerente.alterarSenha(atual, nova);
+
+        if (gerente.alterarSenha(atual, nova)) {
+            System.out.println("Senha alterada com sucesso!");
+        }
+        else {
+            System.out.println("Não foi possível alterar a senha!");
+        }
     }
 
     public static void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {
