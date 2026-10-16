@@ -78,14 +78,20 @@ public class Entrada {
     }
 
     public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {
-        empresa.listarFuncionarios();
+        if (empresa.listarFuncionarios() == 0) {
+            System.out.println("Nenhum funcionário cadastrado!");
+            return null;
+        }
         int numero = Entrada.lerInteiro("Informe o número do funcionário desejado: ", leitor);
 
         return empresa.getFuncionario(numero - 1);
     }
 
     public static Gerente selecionarGerente(Empresa empresa, Scanner leitor) {
-        empresa.listarGerentes();
+        if (empresa.listarGerentes() == 0) {
+            System.out.println("Nenhum gerente cadastrado!");
+            return null;
+        }
         int numero = Entrada.lerInteiro("Informe o número do gerente desejado: ", leitor);
 
         return empresa.getGerente(numero - 1);
@@ -93,7 +99,10 @@ public class Entrada {
 
     public static void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {
         Funcionario funcionario = selecionarFuncionario(empresa, leitor);
+        if (funcionario == null) { return; }
+
         Gerente gerente = selecionarGerente(empresa, leitor);
+        if (gerente == null) { return; }
 
         gerente.inserirFuncEquipe(funcionario);
 
@@ -102,6 +111,7 @@ public class Entrada {
 
     public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {
         Gerente gerente = selecionarGerente(empresa, leitor);
+        if (gerente == null) { return; }
 
         String atual = Entrada.lerLinha("Digite a senha atual: ", leitor);
         String nova = Entrada.lerLinha("Digite a nova senha: ", leitor);
@@ -115,10 +125,24 @@ public class Entrada {
     }
 
     public static void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {
-        empresa.funcionarioMaisAntigo().listarDados();
+        Funcionario funcionario = empresa.funcionarioMaisAntigo();
+
+        if (funcionario == null) {
+            System.out.println("Nenhum funcionário cadastrado!");
+            return;
+        }
+
+        funcionario.listarDados();
     }
 
     public static void funcionarioMaisVelho(Empresa empresa, Scanner leitor) {
-        empresa.funcionarioMaisVelho().listarDados();
+        Funcionario funcionario = empresa.funcionarioMaisVelho();
+
+        if (funcionario == null) {
+            System.out.println("Nenhum funcionário cadastrado!");
+            return;
+        }
+
+        funcionario.listarDados();
     }
 }

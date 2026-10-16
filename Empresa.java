@@ -92,15 +92,19 @@ public class Empresa {
         gerente.inserirFuncEquipe(funcionario);
     }
 
-    public void listarFuncionarios() {
+    public int listarFuncionarios() {
         for (int i = 0; i < this.funcionarios.size(); i++) {
             System.out.println((i + 1) + ") " + funcionarios.get(i).getNome());
         }
+
+        return this.funcionarios.size();
     }
 
-    public void listarGerentes() {
+    public int listarGerentes() {
         for (int i = 0; i < this.gerentes.size(); i++) {
             System.out.println((i + 1) + ") " + gerentes.get(i).getNome());
         }
+
+        return this.gerentes.size();
     }
 }
