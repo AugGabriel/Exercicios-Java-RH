@@ -71,9 +71,19 @@ public class Entrada {
         gerente.inserirFuncEquipe(funcionario);
     }
 
-    public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {}
+    public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {
+        Gerente gerente = selecionarGerente(empresa, leitor);
 
-    public static void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {}
+        String atual = Entrada.lerLinha("Digite a senha atual: ", leitor);
+        String nova = Entrada.lerLinha("Digite a nova senha: ", leitor);
+        gerente.alterarSenha(atual, nova);
+    }
 
-    public static void funcionarioMaisVelho(Empresa empresa, Scanner leitor) {}
+    public static void funcionarioMaisAntigo(Empresa empresa, Scanner leitor) {
+        empresa.funcionarioMaisAntigo().listarDados();
+    }
+
+    public static void funcionarioMaisVelho(Empresa empresa, Scanner leitor) {
+        empresa.funcionarioMaisVelho().listarDados();
+    }
 }
