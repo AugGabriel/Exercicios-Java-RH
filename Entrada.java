@@ -14,7 +14,7 @@ public class Entrada {
         return leitor.nextDouble();
     }
 
-        public static int menu(Empresa empresa, Scanner leitor) {
+    public static int menu(Empresa empresa, Scanner leitor) {
         System.out.println("Opções:");
         System.out.println("1) Contratar funcionário");
         System.out.println("2) Contratar gerente");
@@ -22,6 +22,7 @@ public class Entrada {
         System.out.println("4) Alterar senha de gerente");
         System.out.println("5) Imprimir dados do cliente com mais tempo de casa");
         System.out.println("6) Imprimir dados do cliente mais velho");
+        System.out.println("0) Sair");
 
         return Entrada.lerInteiro("Sua escolha: ", leitor);
     }
