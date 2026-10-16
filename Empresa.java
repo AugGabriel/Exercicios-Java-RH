@@ -20,10 +20,11 @@ public class Empresa {
 
         for (Funcionario funcionario : this.funcionarios) {
             funcionario.listarDados();
+            custoMensal += funcionario.salario;
         }
         for (Gerente gerente : this.gerentes) {
             gerente.listarDados();
-            custoMensal += gerente.custoEquipe();
+            custoMensal += gerente.salario;
         }
 
         System.out.println("Custo mensal da empresa: " + custoMensal);

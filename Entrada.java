@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Entrada {
 
     public static String lerLinha(String msg, Scanner leitor) {
-        System.out.println(msg);
+        System.out.print(msg);
         return leitor.nextLine();
     }
     
     public static int lerInteiro(String msg, Scanner leitor) {
-        System.out.println(msg);
+        System.out.print(msg);
 
         int entrada = leitor.nextInt();
         leitor.nextLine();
@@ -17,7 +17,7 @@ public class Entrada {
     }
     
     public static double lerDouble(String msg, Scanner leitor) {
-        System.out.println(msg);
+        System.out.print(msg);
 
         double entrada = leitor.nextDouble();
         leitor.nextLine();
