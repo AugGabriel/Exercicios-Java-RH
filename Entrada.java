@@ -25,8 +25,8 @@ public class Entrada {
         return entrada;
     }
 
-    public static int menu(Empresa empresa, Scanner leitor) {
-        System.out.println("Opções:");
+    public static String menu(Empresa empresa, Scanner leitor) {
+        System.out.println("\n----- Menu -----");
         System.out.println("1) Contratar funcionário");
         System.out.println("2) Contratar gerente");
         System.out.println("3) Atribuir um funcionário a um gerente");
@@ -36,7 +36,7 @@ public class Entrada {
         System.out.println("7) Imprimir folha de pagamento da empresa");
         System.out.println("0) Sair");
 
-        return Entrada.lerInteiro("Sua escolha: ", leitor);
+        return Entrada.lerLinha("Sua escolha: ", leitor);
     }
 
     public static void contratarFuncionario(Empresa empresa, Scanner leitor) {
@@ -98,9 +98,11 @@ public class Entrada {
     }
 
     public static void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {
+        System.out.println("Funcionários:");
         Funcionario funcionario = selecionarFuncionario(empresa, leitor);
         if (funcionario == null) { return; }
 
+        System.out.println("Gerentes:");
         Gerente gerente = selecionarGerente(empresa, leitor);
         if (gerente == null) { return; }
 

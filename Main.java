@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Empresa empresa = new Empresa();
-        int escolha;
+        String escolha;
 
         Scanner leitor = new Scanner(System.in);
 
@@ -11,32 +11,33 @@ public class Main {
             System.out.println("");
             escolha = Entrada.menu(empresa, leitor);
 
-            if (escolha == 1) {
+            if (escolha.equals("1")) {
                 Entrada.contratarFuncionario(empresa, leitor);
             }
-            else if (escolha == 2) {
+            else if (escolha.equals("2")) {
                 Entrada.contratarGerente(empresa, leitor);
             }
-            else if (escolha == 3) {
+            else if (escolha.equals("3")) {
                 Entrada.atribuirFuncionarioGerente(empresa, leitor);
             }
-            else if (escolha == 4) {
+            else if (escolha.equals("4")) {
                 Entrada.alterarSenhaGerente(empresa, leitor);
             }
-            else if (escolha == 5) {
+            else if (escolha.equals("5")) {
                 Entrada.funcionarioMaisAntigo(empresa, leitor);
             }
-            else if (escolha == 6) {
+            else if (escolha.equals("6")) {
                 Entrada.funcionarioMaisVelho(empresa, leitor);
             }
-            else if (escolha == 7) {
+            else if (escolha.equals("7")) {
                 empresa.folhaPagamento();
             }
-            else if (escolha != 0) {
+            else if (!escolha.equals("0")) {
                 System.out.println("Opção inválida!");
             }
-        } while (escolha != 0);
+        } while (!escolha.equals("0"));
 
+        System.out.println("Até mais!");
         leitor.close();
     }
 }
