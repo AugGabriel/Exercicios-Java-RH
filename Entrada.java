@@ -50,11 +50,26 @@ public class Entrada {
         );
     }
 
-    public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {}
+    public static Funcionario selecionarFuncionario(Empresa empresa, Scanner leitor) {
+        empresa.listarFuncionarios();
+        int numero = Entrada.lerInteiro("Informe o número do funcionário desejado: ", leitor);
 
-    public static Gerente selecionarGerente(Empresa empresa, Scanner leitor) {}
+        return empresa.getFuncionario(numero - 1);
+    }
 
-    public static void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {}
+    public static Gerente selecionarGerente(Empresa empresa, Scanner leitor) {
+        empresa.listarGerentes();
+        int numero = Entrada.lerInteiro("Informe o número do gerente desejado: ", leitor);
+
+        return empresa.getGerente(numero - 1);
+    }
+
+    public static void atribuirFuncionarioGerente(Empresa empresa, Scanner leitor) {
+        Funcionario funcionario = selecionarFuncionario(empresa, leitor);
+        Gerente gerente = selecionarGerente(empresa, leitor);
+
+        gerente.inserirFuncEquipe(funcionario);
+    }
 
     public static void alterarSenhaGerente(Empresa empresa, Scanner leitor) {}
 

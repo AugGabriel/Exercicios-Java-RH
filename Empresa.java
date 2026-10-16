@@ -5,6 +5,14 @@ public class Empresa {
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
     private ArrayList<Gerente> gerentes = new ArrayList<>();
 
+    public Funcionario getFuncionario(int index) { 
+        return this.funcionarios.get(index); 
+    }
+
+    public Gerente getGerente(int index) { 
+        return this.gerentes.get(index); 
+    }
+
     public void folhaPagamento() {
         double custoMensal = 0;
 
